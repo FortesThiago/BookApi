@@ -13,12 +13,12 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @PostMapping("/book")
     public Book create(@RequestBody Book book){
         return bookService.create(book);
     }
 
-    @RequestMapping(value = "/book", method = RequestMethod.GET)
+    @GetMapping
     public List<Book> findBooks(){
         return bookService.findAllBooks();
     }
